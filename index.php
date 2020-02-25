@@ -1,10 +1,16 @@
 <?php 	
-$cor = 1;
+$core = 1;
 require_once ("config.php");
+/*
+// pesquisa por um unico id
+$cor = new Cores();
 
-$cores = new Cores();
+$cor->loadById($core);
+echo $cor;*/
 
-$cores->loadById($cor);
-echo $cores;
+//lista toda a tabela
+
+$cores = Cores::getList();
+echo json_encode($cores);
 
  ?>

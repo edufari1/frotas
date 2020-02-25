@@ -32,6 +32,13 @@ class Cores {
 
 
 	}
+
+	public static function getList(){
+
+		$sql = new Sql();
+		return $sql->select ("SELECT * FROM cores ORDER BY idcores");
+
+	}
 	
 	public function __toString(){
 
