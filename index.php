@@ -1,11 +1,10 @@
 <?php 	
-
+$cor = 1;
 require_once ("config.php");
 
-$sql = new Sql();
+$cores = new Cores();
 
-$cores = $sql->select("SELECT * FROM cores");
-
-echo json_encode($cores);
+$cores->loadById($cor);
+echo $cores;
 
  ?>
