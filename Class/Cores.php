@@ -81,9 +81,18 @@ class Cores {
 			':COR'=>$this->getDescores(),
 			':ID'=>$this->getIdcores()
 		));
+	}
 
+	public function delete(){  //deleta um registro de cores com base no id
 
+		$sql = new Sql();
 
+		$sql->query("DELETE FROM cores WHERE idcores = :ID",array(
+			':ID'=>$this->getIdcores()
+		));
+
+		$this->setIdcores(0);
+		$this->setDescores("");
 	}
 	
 	public function __toString(){    //quando for dado o comando echo no objeto, transforma-o em um json

@@ -19,12 +19,19 @@ echo json_encode($cores);
 $cor = new Cores();
 $cor->setDescores($core);
 $cor->insert();
+echo $cor;
+
+//atuaaliza um registro de cores com base no id
+$cor = new Cores();
+$cor->loadById(4);
+$cor->update("Branco e Cinza");
 echo $cor;*/
 
 $cor = new Cores();
 
-$cor->loadById(4);
-$cor->update("Branco e Cinza");
+$cor->loadById(7);
+$cor->delete();
 echo $cor;
+
 
  ?>
