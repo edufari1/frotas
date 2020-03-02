@@ -8,8 +8,8 @@ class Cores {
 	public function getIdcores(){
 		return $this->idcores;
 	}
-	public function setIdcores($idcores){
-		$this->idcores = $idcores;
+	public function setIdcores($cores){
+		$this->idcores = $cores;
 	}
 
 	public function getDescores(){
@@ -26,8 +26,6 @@ class Cores {
 
 		if(count($results)>0){
 			$this->setData($results[0]);
-		}else{
-			return "Registro inexistente";
 		}
 	}
 
@@ -58,7 +56,7 @@ class Cores {
 		}
 
 
-	public function insert(){    //utilizada para fazer a gravação de um novo registro. Utiliza uma procedure gravada diretamente no banco chamada sp_cores_insert. Retorna o registro que foi gravadao
+	public function insert(){    //utilizada para fazer a gravação de um novo registro. Utiliza uma procedure gravada diretamente no banco chamada sp_cores_insert. Retorna o registro que foi gravado
 
 		$sql = new Sql();
 

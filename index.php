@@ -1,37 +1,33 @@
-<?php 	
-$core = "Vermelho Intenso";
-require_once ("config.php");
+<?php 
+require_once 'config.php';
 /*
-// pesquisa por um unico id
-$cor = new Cores();
-$cor->loadById($core);
-echo $cor;
+$modelos = new Modelos();
+$modelos->loadById(1);
+echo $modelos;
 
-//lista toda a tabela
-$cores = Cores::getList();
-echo json_encode($cores);
 
-//carrega uma lista de cores pela descrição
-//$search = Cores::search($core);
-//echo json_encode($search);
+$modelos = Modelos::getList();
+echo json_encode($modelos);
 
-//Insere uma nova cor na tabela
-$cor = new Cores();
-$cor->setDescores($core);
-$cor->insert();
-echo $cor;
+$modelos = new Modelos();
+$modelos = Modelos::search('lo3');
+echo json_encode($modelos);
 
-//atuaaliza um registro de cores com base no id
-$cor = new Cores();
-$cor->loadById(4);
-$cor->update("Branco e Cinza");
-echo $cor;*/
+$modelos = new Modelos();
+$modelos->setIdmodelos(6);
+$modelos->setDescmodelos('Modelo 6');
+$modelos->setMarcas_idmarcas(2);
+$modelos->insert();
+echo ($modelos);
 
-$cor = new Cores();
+$modelos = new Modelos();
+$modelos->loadById(6);
+$modelos->update('Modelo 06', 3);
+echo $modelos;*/
 
-$cor->loadById(7);
-$cor->delete();
-echo $cor;
-
+$modelos = new Modelos();
+$modelos->loadById(6);
+$modelos->delete();
+echo $modelos;
 
  ?>
