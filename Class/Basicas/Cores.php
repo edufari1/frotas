@@ -32,7 +32,7 @@ class Cores {
 	public static function getList(){    //lista todas as cores da tabela
 
 		$sql = new Sql();
-		return $sql->select ("SELECT * FROM cores ORDER BY idcores");
+		return $resultado = $sql->select ("SELECT * FROM cores ORDER BY idcores");
 
 	}
 
@@ -43,7 +43,7 @@ class Cores {
 			':SEARCH'=>"%".$cor."%"	
 		));
 		if (count($results)>0){
-			return $results;
+			$this->setData($results);
 		}else{
 			return "Registro inexistente!";
 		}
